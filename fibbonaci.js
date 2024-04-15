@@ -18,4 +18,27 @@ function iterativeFibbonaci(sequenceLength){
 
 }
 
-console.log(iterativeFibbonaci(10))
+
+// function recursiveFibbonaci(sequenceLength){
+//     const fibbonaciSequence = []
+
+//     if(sequenceLength < 2){
+//         return [sequenceLength]
+//     }
+
+//     return [].concat(recursiveFibbonaci(sequenceLength - 1)[0] + recursiveFibbonaci(sequenceLength - 2)[0])
+// }
+
+function recursiveFibbonaci(sequenceLength, sequence = [0, 1]){
+    if (sequenceLength <= 1) return sequence
+
+
+    sequence.push(sequence[sequence.length - 1] + sequence[sequence.length - 2]);
+
+
+    return recursiveFibbonaci(sequenceLength - 1, sequence);
+
+}
+
+// console.log(iterativeFibbonaci(10))
+console.log(recursiveFibbonaci(9))
